@@ -1,0 +1,9 @@
+export default function logger(req, res, next) {
+  const inicio = Date.now();                       // marca o momento da chegada
+  res.on('finish', () => {                         // quando a resposta for enviada...
+    const duracao = Date.now() - inicio;           // calcula quanto tempo levou
+    const agora = new Date().toISOString();        // timestamp formatado
+    console.log(`[${agora}]${req.method}${req.originalUrl} →${res.statusCode} (${duracao}ms)`);
+  });
+  next();                                           // passa para o próximo middleware/rota
+}

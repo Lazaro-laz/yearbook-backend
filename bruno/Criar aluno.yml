@@ -1,0 +1,15 @@
+info:
+  name: Criar aluno
+  type: http
+  seq: 3
+
+http:
+  method: POST
+  url: https://legendary-barnacle-v6xgp45vj6rp2xwjg-3000.app.github.dev/alunos
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
